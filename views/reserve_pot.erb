@@ -1,0 +1,29 @@
+  
+  <!-- <link rel="Stylesheet" media="screen" href="http://haineault.com/media/jquery/ui-timepickr/page/reset.css" /> 
+  <link rel="Stylesheet" media="screen" href="http://haineault.com/media/jquery/ui-timepickr/page/styles.css" /> -->
+  <link rel="Stylesheet" media="screen" href="http://haineault.com/media/jquery/ui-timepickr/dist/themes/default/ui.core.css" /> 
+  <link rel="Stylesheet" media="screen" href="http://haineault.com/media/jquery/ui-timepickr/src/css/ui.timepickr.css" /> 
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.js"></script> 
+  <script type="text/javascript" src="http://haineault.com/media/jquery/ui-timepickr/page/jquery.utils.js"></script> 
+  <script type="text/javascript" src="http://haineault.com/media/jquery/ui-timepickr/page/jquery.strings.js"></script> 
+  <script type="text/javascript" src="http://haineault.com/media/jquery/ui-timepickr/page/jquery.anchorHandler.js"></script> 
+  <script type="text/javascript" src="http://haineault.com/media/jquery/ui-timepickr/page/jquery.ui.all.js"></script> 
+  <script type="text/javascript" src="http://haineault.com/media/jquery/ui-timepickr/src/ui.timepickr.js"></script>
+  <script type="text/javascript">
+  $(function(){
+      $('#timestart').timepickr();
+  });
+  </script>
+
+Reserve pot
+<form action="/pots/<%= params[:pot_id] %>/reserve_pot" method="post">
+  ETA:  <input type="text" name="date" id="datepicker" />
+        <input id="timestart" name="time" type="text" value="" />
+        <input type="submit" value="submit" />
+</form>
+
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+</script>

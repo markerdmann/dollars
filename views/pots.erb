@@ -1,0 +1,29 @@
+<table border='1'>
+  <tr>
+    <th>Pot Name</th>
+    <th>Task Description</th>
+    <th>Reward</th>
+    <th>Creator</th>
+    <th>Actions</th>
+    <th>Reserved By</th>
+    <th>ETA</th>
+    <th>Claimed By</th>
+    <th>Completed By</th>
+  </tr>
+<%= Pot.all.map do |pot|
+  "<tr>
+    <td>#{pot.name}</td>
+    <td>#{pot.task}</td>
+    <td>$#{pot.cash_money}</td>
+    <td>#{pot.user.username}</td>
+    <td>
+      <a href='/pots/#{pot.id}/claim_pot'>claim pot</a><br />
+      <a href='/pots/#{pot.id}/reserve_pot'>reserve pot</a><br />      
+    </td>
+    <td>#{pot.reserved_by}</td>
+    <td>#{pot.eta}</td>
+    <td>#{User.get(pot.claimed_by).username}</td>
+    <td>#{pot.completed_by}</td>
+  </tr>" 
+end.to_s %>
+</table>

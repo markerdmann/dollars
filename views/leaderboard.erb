@@ -1,0 +1,6 @@
+<table border='1'>
+  <tr><th>Username</th><th>Cash Money</th></tr>
+<%= User.all.map do |user|
+  "<tr><td>#{user.username}</td><td>$#{user.cash_money}</td></tr>" 
+end.to_s %>
+</table>
